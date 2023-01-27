@@ -9,7 +9,7 @@ const {
   getProduct,
 } = require("../queries/products");
 
-products.get("/assorted", async (req, res) => {
+products.get("/assortments", async (req, res) => {
   try {
     const allProducts = await getAllAssorted();
     res.status(200).json({ success: true, payload: allProducts });
@@ -20,7 +20,7 @@ products.get("/assorted", async (req, res) => {
   }
 });
 
-products.get("/single", async (req, res) => {
+products.get("/singles", async (req, res) => {
   try {
     const allProducts = await getAllSingle();
     res.status(200).json({ success: true, payload: allProducts });

@@ -13,7 +13,7 @@ app.use("/products", productsController);
 //ROUTES
 app.get("/", (req, res) => {
   res.send(
-    "<div><h1>Welcome to my ecommerce api server! This api server is being used as a practice tool.</h1> </br> <h3>Try this endpoint: /products</h3></div>"
+    "<div><h1>Welcome to my ecommerce api server! This api server is being used as a practice tool.</h1> <br /> <h3>Try this endpoint: /products</h3></div>"
   );
 });
 

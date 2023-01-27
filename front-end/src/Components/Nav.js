@@ -7,7 +7,7 @@ export default function Nav() {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/assortments">Assortment Boxes</Link>
-      <Link to="/makeyourown">A La Carte</Link>
+      <Link to="/singles">A La Carte</Link>
     </nav>
   );
 }

@@ -10,6 +10,7 @@ CREATE TABLE products (
     flavor TEXT,
     pcs INT,
     type TEXT,
+    description TEXT,
     image TEXT NOT NULL
 );
 
