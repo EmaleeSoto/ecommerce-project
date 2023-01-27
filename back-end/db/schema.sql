@@ -6,10 +6,10 @@ CREATE DATABASE cocoa_cart;
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    price INT NOT NULL,
+    price NUMERIC NOT NULL,
     flavor TEXT,
-    type TEXT NOT NULL,
     pcs INT,
+    type TEXT,
     image TEXT NOT NULL
 );
 
