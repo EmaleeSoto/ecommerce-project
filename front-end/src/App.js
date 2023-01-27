@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import ErrorPage from "./Pages/ErrorPage";
 import About from "./Pages/About";
 import Nav from "./Components/Nav";
+import AssortedBoxes from "./Pages/AssortedBoxes";
+import ALaCarte from "./Pages/ALaCarte";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<ErrorPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/assortments" element={<AssortedBoxes />} />
+          <Route path="/makeyourown" element={<ALaCarte />} />
         </Routes>
       </Router>
     </div>

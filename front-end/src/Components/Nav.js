@@ -6,6 +6,8 @@ export default function Nav() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
+      <Link to="/assortments">Assortment Boxes</Link>
+      <Link to="/makeyourown">A La Carte</Link>
     </nav>
   );
 }
