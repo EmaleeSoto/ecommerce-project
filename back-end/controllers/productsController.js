@@ -35,7 +35,7 @@ products.get("/:id", async (req, res) => {
   try {
     const oneProduct = await getProduct(req.params.id);
     res.status(200).json({ success: true, payload: oneProduct });
-  } catch {
+  } catch (error) {
     res
       .status(400)
       .json({ success: false, payload: "Could not find this product" });
