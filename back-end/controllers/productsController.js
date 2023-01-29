@@ -13,10 +13,8 @@ products.get("/assortments", async (req, res) => {
   try {
     const allProducts = await getAllAssorted();
     res.status(200).json({ success: true, payload: allProducts });
-  } catch {
-    res
-      .status(400)
-      .json({ success: false, payload: "Could not find products" });
+  } catch (error) {
+    return error;
   }
 });
 
@@ -24,10 +22,8 @@ products.get("/singles", async (req, res) => {
   try {
     const allProducts = await getAllSingle();
     res.status(200).json({ success: true, payload: allProducts });
-  } catch {
-    res
-      .status(400)
-      .json({ success: false, payload: "Could not find products" });
+  } catch (error) {
+    return error;
   }
 });
 
