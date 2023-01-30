@@ -1,6 +1,4 @@
 const express = require("express");
-const { one } = require("../db/dbConfig");
-const db = require("../db/dbConfig");
 const products = express.Router();
 
 const {
