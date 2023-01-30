@@ -25,7 +25,7 @@ products.get("/singles", async (req, res) => {
   }
 });
 
-products.get("/:id", async (req, res) => {
+products.get("/:product/:id", async (req, res) => {
   try {
     const oneProduct = await getProduct(req.params.id);
     res.status(200).json({ success: true, payload: oneProduct });
