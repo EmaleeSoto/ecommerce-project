@@ -10,6 +10,9 @@ export default function Assortment({ assortment, index }) {
         <em>
           ${assortment.price} - {assortment.pcs} pieces
         </em>
+        <button className="incrementer">+</button>
+        <button className="decrementer">-</button>
+        <button className="add-to-cart">Add to Cart</button>
       </Link>
     </div>
   );

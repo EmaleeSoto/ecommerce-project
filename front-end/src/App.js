@@ -1,28 +1,34 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css"; //stylesheets for bootstrap component
+import { Container } from "react-bootstrap"; //bootstrap component that creates space from edges of screen
 import Home from "./Pages/Home";
 import ErrorPage from "./Pages/ErrorPage";
 import About from "./Pages/About";
-import Nav from "./Components/Nav";
+import NavbarComponent from "./Components/NavbarComponent";
 import AssortedBoxes from "./Pages/AssortedBoxes";
 import ALaCarte from "./Pages/ALaCarte";
-import AssortedDetails from "./Components/AssortedDetails";
+import ShowOneProduct from "./Pages/ShowOneProduct";
+import CancelledOrder from "./Pages/CancelledOrder";
+import SuccessfulOrder from "./Pages/SuccessfulOrder";
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <Router>
-        <Nav />
+        <NavbarComponent />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="*" element={<ErrorPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/assortments" element={<AssortedBoxes />} />
-          <Route path="/assotments/:index" element={<AssortedDetails />} />
+          <Route path="/:product/:index" element={<ShowOneProduct />} />
           <Route path="/singles" element={<ALaCarte />} />
+          <Route path="/cancelled" element={<CancelledOrder />} />
+          <Route path="/success" element={<SuccessfulOrder />} />
         </Routes>
       </Router>
-    </div>
+    </Container>
   );
 }
 
