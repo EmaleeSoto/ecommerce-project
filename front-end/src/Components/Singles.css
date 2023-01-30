@@ -1,0 +1,15 @@
+.single img {
+    width: 200px;
+    height: auto;
+}
+
+.single button {
+    background-color: pink;
+    border-color: pink;
+}
+
+.single button:hover {
+    background-color: white;
+    border-color: pink;
+    color: pink;
+}

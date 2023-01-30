@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Assortment({ assortment, index }) {
   return (
-    <div>
+    <div className="assortment-box">
       <Link to={`/assortments/${index}`}>
         <h3>{assortment.name}</h3>
         <img src={assortment.image} alt={assortment.name} />

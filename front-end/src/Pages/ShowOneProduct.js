@@ -1,8 +1,8 @@
-import AssortedDetails from "../Components/ProductDetails";
+import ProductDetails from "../Components/ProductDetails";
 export default function ShowOneProduct() {
   return (
     <div>
-      <AssortedDetails />
+      <ProductDetails />
     </div>
   );
 }

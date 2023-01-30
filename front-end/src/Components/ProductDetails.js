@@ -4,14 +4,14 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 export default function ProductDetails() {
-  const [assortedBox, setAssortedBox] = useState({});
-  const { product, index } = useParams();
+  const [product, setProduct] = useState({});
+  const { product_type, index } = useParams();
 
   useEffect(() => {
     axios
-      .get(`${API}/products/${product}/${index}`)
+      .get(`${API}/products/${product_type}/${index}`)
       .then((res) => {
-        setAssortedBox(res.data.payload);
+        setProduct(res.data.payload);
       })
       .catch((error) => {
         console.log(error);
@@ -20,8 +20,8 @@ export default function ProductDetails() {
 
   return (
     <div>
-      <h1>{assortedBox.name}</h1>
-      <img src={assortedBox.image} alt={assortedBox.name} />
+      <h1>{product.name}</h1>
+      <img src={product.image} alt={product.name} />
     </div>
   );
 }

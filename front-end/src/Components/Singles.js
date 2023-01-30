@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
 import Single from "./Single";
+import "./Singles.css";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
@@ -16,11 +18,18 @@ export default function Singles() {
         console.log(error);
       });
   }, []);
+
   return (
     <div>
-      {singles.map((single, index) => {
-        return <Single key={index} single={single} index={index} />;
-      })}
+      <Row xs={1} md={3} className="singles-row">
+        {singles.map((single) => {
+          return (
+            <Col align="center">
+              <Single key={single.id} single={single} index={single.id} />
+            </Col>
+          );
+        })}
+      </Row>
     </div>
   );
 }

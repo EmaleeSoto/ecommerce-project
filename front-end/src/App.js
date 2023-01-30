@@ -22,7 +22,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/assortments" element={<AssortedBoxes />} />
-          <Route path="/:product/:index" element={<ShowOneProduct />} />
+          <Route path="/:product_type/:index" element={<ShowOneProduct />} />
           <Route path="/singles" element={<ALaCarte />} />
           <Route path="/cancelled" element={<CancelledOrder />} />
           <Route path="/success" element={<SuccessfulOrder />} />

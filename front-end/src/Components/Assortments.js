@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
 import Assortment from "./Assortment";
+import "./Assortments.css";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
@@ -19,9 +21,15 @@ export default function Assortments() {
 
   return (
     <div>
-      {assortments.map((assortment, index) => {
-        return <Assortment key={index} assortment={assortment} index={index} />;
-      })}
+      <Row xs={1} md={3} className="assortments-row">
+        {assortments.map((assortment, index) => {
+          return (
+            <Col align="center">
+              <Assortment key={index} assortment={assortment} index={index} />
+            </Col>
+          );
+        })}
+      </Row>
     </div>
   );
 }
