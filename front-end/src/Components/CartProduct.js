@@ -17,7 +17,7 @@ export default function CartProduct({ cart, item }) {
       <Button
         size="sm"
         onClick={() => {
-          cart.addItemToCart(id);
+          cart.addItemToCart(item);
         }}
       >
         +

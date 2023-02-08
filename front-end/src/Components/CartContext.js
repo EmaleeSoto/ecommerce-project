@@ -24,14 +24,14 @@ export function CartProvider({ children }) {
     return quantity === undefined ? 0 : quantity;
   }
 
-  function addItemToCart(id, item) {
-    const quantity = getProductQuantity(id);
+  function addItemToCart(item) {
+    const quantity = getProductQuantity(item.id);
     if (quantity === 0) {
       //product not in cart
       setCartProducts([
         ...cartProducts,
         {
-          id: id,
+          id: item.id,
           name: item.name,
           price: parseFloat(item.price),
           type: item.type,
@@ -42,7 +42,7 @@ export function CartProvider({ children }) {
       //product is in cart
       setCartProducts(
         cartProducts.map((product) => {
-          return product.id === id
+          return product.id === item.id
             ? { ...product, quantity: product.quantity + 1 }
             : product;
         })

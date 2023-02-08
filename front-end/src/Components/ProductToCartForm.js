@@ -19,7 +19,7 @@ export default function ProductToCartForm({ product }) {
               <Button
                 sm="6"
                 onClick={() => {
-                  cart.addItemToCart(product.id);
+                  cart.addItemToCart(product);
                 }}
                 className="mx-2"
               >
@@ -50,7 +50,7 @@ export default function ProductToCartForm({ product }) {
         <Button
           className="add-to-cart-button"
           onClick={() => {
-            cart.addItemToCart(product.id, product);
+            cart.addItemToCart(product);
           }}
         >
           Add to Cart
