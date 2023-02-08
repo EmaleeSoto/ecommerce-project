@@ -31,20 +31,20 @@ app.post("/buyproducts", async (req, res) => {
   let lineItems = [];
   items.forEach((item) => {
     lineItems.push({
-      // price: item.stripe_id, //price_1MZ6soLqT2MAV3tXY8LqTl1Y
+      //Syntax below for products not added to Stripe Project
+      // price_data: {
+      //   currency: "usd",
+      //   product_data: {
+      //     name: item.name,
+      //   },
+      //   unit_amount: 2000,
+      // },
       // quantity: item.quantity,
-      // price_data: "usd",
-
-      price_data: {
-        currency: "usd",
-        product_data: {
-          name: item.name,
-        },
-        unit_amount: 2000,
-      },
+      price: item.stripeId,
       quantity: item.quantity,
     });
   });
+
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
