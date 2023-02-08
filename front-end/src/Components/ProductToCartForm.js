@@ -2,10 +2,10 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
-export default function ProductToCartForm({ id, product }) {
+export default function ProductToCartForm({ product }) {
   const cart = useContext(CartContext);
 
-  const productQuantity = cart.getProductQuantity(id);
+  const productQuantity = cart.getProductQuantity(product.id);
   return (
     <div>
       {" "}
@@ -19,7 +19,7 @@ export default function ProductToCartForm({ id, product }) {
               <Button
                 sm="6"
                 onClick={() => {
-                  cart.addItemToCart(id);
+                  cart.addItemToCart(product.id);
                 }}
                 className="mx-2"
               >
@@ -28,7 +28,7 @@ export default function ProductToCartForm({ id, product }) {
               <Button
                 sm="6"
                 onClick={() => {
-                  cart.removeOneItemFromCart(id);
+                  cart.removeOneItemFromCart(product.id);
                 }}
                 className="mx-2"
               >
@@ -37,7 +37,7 @@ export default function ProductToCartForm({ id, product }) {
               <Button
                 variant="danger"
                 onClick={() => {
-                  cart.deleteItemFromCart(id);
+                  cart.deleteItemFromCart(product.id);
                 }}
                 className="my-2"
               >
@@ -50,7 +50,7 @@ export default function ProductToCartForm({ id, product }) {
         <Button
           className="add-to-cart-button"
           onClick={() => {
-            cart.addItemToCart(id, product);
+            cart.addItemToCart(product.id, product);
           }}
         >
           Add to Cart

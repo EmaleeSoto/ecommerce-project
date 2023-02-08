@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import ProductToCartForm from "./ProductToCartForm";
 
-export default function Assortment({ assortment, id }) {
+export default function Assortment({ assortment }) {
   return (
     <div className="assortment-box">
-      <Link to={`/assortments/${id}`}>
+      <Link to={`/assortments/${assortment.id}`}>
         <h3>{assortment.name}</h3>
         <img src={assortment.image} alt={assortment.name} />
         <br />
@@ -12,7 +12,7 @@ export default function Assortment({ assortment, id }) {
           ${assortment.price} - {assortment.pcs} pieces
         </em>
       </Link>
-      <ProductToCartForm id={id} product={assortment} />
+      <ProductToCartForm product={assortment} />
     </div>
   );
 }

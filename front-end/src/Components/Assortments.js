@@ -25,7 +25,7 @@ export default function Assortments() {
         {assortments.map((assortment) => {
           return (
             <Col align="center" key={assortment.id}>
-              <Assortment assortment={assortment} id={assortment.id} />
+              <Assortment assortment={assortment} />
             </Col>
           );
         })}

@@ -25,7 +25,7 @@ export default function Singles() {
         {singles.map((single) => {
           return (
             <Col align="center" key={single.id}>
-              <Single single={single} id={single.id} />
+              <Single single={single} />
             </Col>
           );
         })}
