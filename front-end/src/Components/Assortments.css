@@ -2,3 +2,14 @@
     width: 200px;
     height: auto;
 }
+
+.add-to-cart-button {
+    background-color: pink;
+    border-color: pink;
+}
+
+.add-to-cart-button:hover {
+    background-color: white;
+    border-color: pink;
+    color: pink;
+}

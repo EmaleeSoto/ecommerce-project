@@ -3,12 +3,12 @@
     height: auto;
 }
 
-.single button {
+.add-to-cart-button {
     background-color: pink;
     border-color: pink;
 }
 
-.single button:hover {
+.add-to-cart-button:hover {
     background-color: white;
     border-color: pink;
     color: pink;

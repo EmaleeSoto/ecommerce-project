@@ -14,5 +14,17 @@ a {
 
 a:hover {
     cursor: pointer;
-    color: pink;
+    color: #B15E5D;
+}
+
+.link-wrapper a {
+    width: fit-content;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #B15E5D;
+}
+
+.cart-button {
+    background-color: #B15E5D;
+    border: none;
 }

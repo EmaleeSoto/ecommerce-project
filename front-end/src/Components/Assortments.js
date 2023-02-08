@@ -22,10 +22,10 @@ export default function Assortments() {
   return (
     <div>
       <Row xs={1} md={3} className="assortments-row">
-        {assortments.map((assortment, index) => {
+        {assortments.map((assortment) => {
           return (
-            <Col align="center">
-              <Assortment key={index} assortment={assortment} index={index} />
+            <Col align="center" key={assortment.id}>
+              <Assortment assortment={assortment} id={assortment.id} />
             </Col>
           );
         })}

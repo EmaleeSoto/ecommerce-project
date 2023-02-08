@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import ProductToCartForm from "./ProductToCartForm";
 
-export default function Single({ single, index }) {
+export default function Single({ single, id }) {
   return (
     <div className="single">
-      <Link to={`/singles/${index}`}>
+      <Link to={`/singles/${id}`}>
         <h3>{single.name}</h3>
         <img src={single.image} alt={single.name} />
         <br />
@@ -12,7 +12,7 @@ export default function Single({ single, index }) {
           ${single.price} - {single.pcs} pieces
         </em>
       </Link>
-      <Button>Add to Cart</Button>
+      <ProductToCartForm id={id} product={single} />
     </div>
   );
 }

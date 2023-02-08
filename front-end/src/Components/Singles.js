@@ -24,8 +24,8 @@ export default function Singles() {
       <Row xs={1} md={3} className="singles-row">
         {singles.map((single) => {
           return (
-            <Col align="center">
-              <Single key={single.id} single={single} index={single.id} />
+            <Col align="center" key={single.id}>
+              <Single single={single} id={single.id} />
             </Col>
           );
         })}
