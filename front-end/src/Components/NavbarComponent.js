@@ -3,7 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button, Container, Navbar, Modal, ModalHeader } from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
+import axios from "axios";
 import "./Nav.css";
+const API = process.env.REACT_APP_API_URL;
 
 export default function NavbarComponent() {
   const cart = useContext(CartContext);
@@ -12,6 +14,18 @@ export default function NavbarComponent() {
     (sum, product) => sum + product.quantity,
     0
   );
+
+  const checkout = async (items) => {
+    await axios
+      .post(`${API}/buyproducts`, {
+        items,
+      })
+      .then((response) => {
+        if (response.data.url) {
+          window.location.href = response.data.url; //forwarding user to stripe
+        }
+      });
+  };
 
   const handleClose = () => {
     setShow(false);
@@ -58,42 +72,12 @@ export default function NavbarComponent() {
                       item={currentItem}
                     />
                   );
-                  // <li>
-                  //   <Link to={`/assortments/${currentItem.id}`}>
-                  //     {currentItem.name} | ${currentItem.price} (x
-                  //     {currentItem.quantity})
-                  //   </Link>
-                  //   <br></br>
-                  //   <Button
-                  //     size="sm"
-                  //     onClick={() => {
-                  //       cart.addItemToCart(currentItem.id);
-                  //     }}
-                  //   >
-                  //     +
-                  //   </Button>
-                  //   <Button
-                  //     size="sm"
-                  //     onClick={() => {
-                  //       cart.deleteItemFromCart(currentItem.id);
-                  //     }}
-                  //   >
-                  //     Remove Item
-                  //   </Button>
-                  //   <Button
-                  //     size="sm"
-                  //     onClick={() => {
-                  //       cart.removeOneItemFromCart(currentItem.id);
-                  //     }}
-                  //   >
-                  //     -
-                  //   </Button>
-                  //   <hr></hr>
-                  // </li>
                 })}
               </ul>
               <h1>Total: ${cart.getTotalCost().toFixed(2)}</h1>
-              <Button variant="success">Purchase!</Button>
+              <Button variant="success" onClick={() => checkout(cart.items)}>
+                Purchase!
+              </Button>
             </>
           ) : (
             <h1>No items in cart</h1>

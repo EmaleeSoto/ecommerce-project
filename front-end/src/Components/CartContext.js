@@ -35,6 +35,7 @@ export function CartProvider({ children }) {
           name: item.name,
           price: parseFloat(item.price),
           type: item.type,
+          stripeId: item.stripe_id,
           quantity: 1,
         },
       ]);
