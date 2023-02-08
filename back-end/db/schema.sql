@@ -13,7 +13,8 @@ CREATE TABLE products (
     type TEXT,
     description TEXT,
     image TEXT NOT NULL, 
-    stock_status BOOLEAN
+    stock_status BOOLEAN,
+    stripe_id TEXT
 );
 
 CREATE TABLE customer (
