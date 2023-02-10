@@ -12,6 +12,7 @@ import ALaCarte from "./Pages/ALaCarte";
 import ShowOneProduct from "./Pages/ShowOneProduct";
 import CancelledOrder from "./Pages/CancelledOrder";
 import SuccessfulOrder from "./Pages/SuccessfulOrder";
+import Login from "./Pages/Login";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/singles" element={<ALaCarte />} />
             <Route path="/cancelled" element={<CancelledOrder />} />
             <Route path="/success" element={<SuccessfulOrder />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Router>
       </Container>

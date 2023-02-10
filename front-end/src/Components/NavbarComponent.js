@@ -46,7 +46,7 @@ export default function NavbarComponent() {
     <Navbar className="navbar" expand="sm">
       {/* expand: Determines where nav bar collapses for mobile screens */}
       <Navbar.Brand href="/" className="header">
-        <Link to="./login" className="login-button">
+        <Link to="login" className="login-button">
           Login
         </Link>
         <h1>

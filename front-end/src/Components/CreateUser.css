@@ -1,0 +1,17 @@
+.form-control {
+    width: fit-content;
+}
+
+.form-group {
+    width: fit-content;
+    margin: auto;
+}
+
+.checkbox {
+    display: inline;
+    margin-top: 5%;
+}
+
+.create-user-form {
+    text-align: center;
+}
