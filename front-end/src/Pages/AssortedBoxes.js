@@ -2,8 +2,8 @@ import Assortments from "../Components/Assortments";
 
 export default function AssortedBoxes() {
   return (
-    <div>
-      <h1>Assorted Boxes</h1>
+    <div className="page">
+      <h1 className="page-title">Assortment Boxes</h1>
       <Assortments />
     </div>
   );

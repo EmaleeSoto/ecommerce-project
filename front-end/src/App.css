@@ -2,3 +2,9 @@ body {
     background-color: #F4DDC3;
     color: #BE585A;
 }
+
+.page-title {
+    text-align: center;
+    font-size: xxx-large;
+    margin: 3%;
+}

@@ -1,6 +1,13 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Container, Navbar, Modal, ModalHeader } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Navbar,
+  Modal,
+  ModalHeader,
+  Nav,
+} from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import CartProduct from "./CartProduct";
 import axios from "axios";
@@ -36,19 +43,30 @@ export default function NavbarComponent() {
 
   const navigate = useNavigate();
   return (
-    <Navbar expand="sm">
+    <Navbar className="navbar" expand="sm">
       {/* expand: Determines where nav bar collapses for mobile screens */}
-      <Navbar.Brand href="/">Ecommerce Store</Navbar.Brand>
+      <Navbar.Brand href="/" className="header">
+        <Link to="./login" className="login-button">
+          Login
+        </Link>
+        <h1>
+          Simply <span>Divine</span>
+        </h1>
+        <form className="search-bar">
+          <input value={"search"} />
+        </form>
+      </Navbar.Brand>
       {/* Brand: shows title */}
       <Navbar.Toggle></Navbar.Toggle>
       {/* Toggle: Elements that collapse on mobile view */}
       <Navbar.Collapse className="justify-content-end">
         {/* Collapse: Determines which elements will collapse (to the right) */}
-        <div className="link-wrapper">
+        <div className="link-wrapper navbar-text">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/assortments">Assortment Boxes</Link>
           <Link to="/singles">A La Carte</Link>
+          <Link to="/contact">Contact Us</Link>
         </div>
         <Button className="cart-button" onClick={handleShow}>
           Cart ({productsCount} Items)

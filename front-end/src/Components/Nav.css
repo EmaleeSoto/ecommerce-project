@@ -1,10 +1,16 @@
-nav {
-    display: block;
-    color: blue;
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-nav h1, .link-wrapper {
-    display: inline;
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    text-align: center;
+}
+
+.header span {
+    color: #B15E5D;
 }
 
 a {
@@ -17,14 +23,29 @@ a:hover {
     color: #B15E5D;
 }
 
+.link-wrapper {
+    margin: auto;
+}
+
 .link-wrapper a {
     width: fit-content;
     margin-right: 10px;
     margin-left: 10px;
     color: #B15E5D;
+    font-size: large;
 }
 
 .cart-button {
     background-color: #B15E5D;
     border: none;
+    position: absolute;
+}
+
+.login-button {
+    width: fit-content;
+    margin: auto;
+}
+
+.search-bar {
+    width: auto;
 }
