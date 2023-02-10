@@ -24,12 +24,16 @@ export default function ProductDetails() {
       <h1>{product.name}</h1>
       <img src={product.image} alt={product.name} />
       <h3>What's in this product</h3>
-      <h3>
+      <ul>
         {product.flavor?.split(", ").map((f) => {
-          return <p key={f}>{f}</p>;
+          return (
+            <li key={f} color="black">
+              {f}
+            </li>
+          );
         })}
-      </h3>
-      <p>{product.stock_status && "In Stock"}</p>
+      </ul>
+      <em>-{product.stock_status && "In Stock"}-</em>
     </div>
   );
 }
