@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
@@ -12,7 +12,11 @@ export const CartContext = createContext({
 });
 
 export function CartProvider({ children }) {
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(
+    localStorage.getItem("itemsInCart")
+      ? JSON.parse(localStorage.getItem("itemsInCart"))
+      : []
+  );
 
   // [ { id: 1, quantity: 1+ } ]
 
@@ -50,6 +54,10 @@ export function CartProvider({ children }) {
       );
     }
   }
+
+  useEffect(() => {
+    localStorage.setItem("itemsInCart", JSON.stringify(cartProducts));
+  }, [cartProducts]);
 
   function removeOneItemFromCart(id) {
     const quantity = getProductQuantity(id);

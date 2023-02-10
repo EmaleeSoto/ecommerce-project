@@ -65,7 +65,7 @@ export default function NavbarComponent() {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/assortments">Assortment Boxes</Link>
-          <Link to="/singles">A La Carte</Link>
+          <Link to="/singles">Single Pieces</Link>
           <Link to="/contact">Contact Us</Link>
         </div>
         <Button className="cart-button" onClick={handleShow}>
